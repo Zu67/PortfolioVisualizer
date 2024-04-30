@@ -1,0 +1,24 @@
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+# Read the portfolio data from a CSV file
+portfolio_data = pd.read_csv('/Users/zubairtahir/Downloads/PortfolioData.csv')
+
+# Convert the 'Date' column to datetime format
+portfolio_data['Date'] = pd.to_datetime(portfolio_data['Date'])
+
+# Set the 'Date' column as the index
+portfolio_data.set_index('Date', inplace=True)
+
+# Calculate the cumulative returns of each stock
+portfolio_returns = portfolio_data.pct_change().cumsum()
+
+# Plot the cumulative returns
+portfolio_returns.plot(figsize=(10, 6))
+plt.title('Portfolio Performance')
+plt.xlabel('Date')
+plt.ylabel('Cumulative Returns')
+plt.legend(loc='upper left')
+plt.show()
