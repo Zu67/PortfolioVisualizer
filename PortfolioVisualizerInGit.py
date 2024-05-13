@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 
 # Define the ticker symbol
-ticker = "QQQ"
+ticker = "VTI"
 benchmark = "SPY"
 
 # Get data for the past 300 days
@@ -29,7 +29,7 @@ print(f"\nData for {benchmark}:")
 print(data_benchmark)
 
 # Define the ticker symbol
-ticker = "QQQ"
+ticker = "VTI"
 benchmark = "SPY"
 
 # Get data for the past 300 days
@@ -72,7 +72,7 @@ constituents_df = pd.DataFrame(data)
 constituents_df.set_index(['UniverseSymbol', 'Time', 'Symbol'], inplace=True)
 
 # Define the ticker symbol
-ticker = "QQQ"
+ticker = "VTI"
 benchmark = "SPY"
 
 # Get data for the past 300 days
@@ -472,13 +472,6 @@ plt.xticks(rotation=45)  # Rotate dates for better readability
 plt.tight_layout()  # Adjust layout to make room for the legend
 
 plt.show()
-
-risk_history = qb.History([selected_symbol, selected_benchmark], 365, Resolution.Daily)
-
-df_security = risk_history.loc[selected_symbol]
-df_benchmark = risk_history.loc[selected_benchmark]
-
-print(df_security.columns)
 
 risk_free_rate = 0.05  # Example: 5% annual risk-free rate
 risk_free_rate_daily = (1 + risk_free_rate) ** (1/252) - 1
