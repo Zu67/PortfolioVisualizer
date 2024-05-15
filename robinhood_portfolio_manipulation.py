@@ -3,7 +3,7 @@ import yfinance as yf
 import math
 
 # Read the CSV file
-df = pd.read_csv(r'robinhood_data.csv', on_bad_lines='skip')
+df = pd.read_csv('robinhood_data.csv', on_bad_lines='skip')
 
 # Remove dollar sign, parentheses and convert 'Price' and 'Amount' to float
 df['Price'] = pd.to_numeric(df['Price'].replace('[\$,]', '', regex=True).replace('\((.*)\)', '-\\1', regex=True), errors='coerce')

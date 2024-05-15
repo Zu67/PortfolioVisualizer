@@ -2,7 +2,7 @@ import pandas as pd
 import yfinance as yf
 
 # Load the CSV file into a DataFrame
-df = pd.read_csv(r'Roth_IRA.csv')
+df = pd.read_csv('Roth_IRA.csv')
 
 # Convert the 'Date' column to datetime and handle errors
 df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
