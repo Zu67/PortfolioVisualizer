@@ -5,7 +5,7 @@ Python scripts for positions built from a brokerage export and for prices from Y
 | Script | What it does |
 | --- | --- |
 | `scripts/Data Generator.py` | Uses Faker to write 100 synthetic buy and sell rows to a local `transactiondata.csv`. |
-| `scripts/portfolio_calculation_quinn.py` | Reads a Robinhood activity CSV from a local path, then computes holding cost, quantity, and average price and downloads adjusted closes with yfinance. |
+| `scripts/portfolio_calculation_quinn.py` | Reads `robinhood_data.csv` from the working directory, then computes holding cost, quantity, and average price and downloads adjusted closes with yfinance. |
 | `scripts/robinhood_portfolio_manipulation.py` | Same kind of holding-cost rollup from `robinhood_data.csv` in the working directory. |
 | `scripts/schwab_portfolio_manipulation.py` | Same rollup for Buy and Sell rows in a local `Roth_IRA.csv`. |
 | `scripts/PortfolioVisualizerInGit.py` | Downloads about 300 days of VTI and SPY. |
