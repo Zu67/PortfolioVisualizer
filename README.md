@@ -18,4 +18,4 @@ Python scripts for positions built from a brokerage export and for prices from Y
 
 `quickstart` is a gitlink to [plaid/quickstart](https://github.com/plaid/quickstart) at `5d4707883204fde096bf618e4862807b759e3c73`.
 
-The commits on this repository are from Zu67, QuinnG17, and the author recorded as `=`.
+The commits that added these scripts are from Zu67 and QuinnG17.
