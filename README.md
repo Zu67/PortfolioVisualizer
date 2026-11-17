@@ -19,3 +19,15 @@ Python scripts for positions built from a brokerage export and for prices from Y
 `quickstart` is a gitlink to [plaid/quickstart](https://github.com/plaid/quickstart) at `5d4707883204fde096bf618e4862807b759e3c73`. The tree entry is mode `160000`, and this repository has no `.gitmodules` file, so a clone does not fetch that commit into the directory.
 
 The commits that added these scripts are from Zu67 and QuinnG17.
+
+`scripts/PortfolioVisualizerInGit.py` is not in the table above. The VTI and SPY download block is pasted three times. Each block sets `end_date` to `datetime.now()` and `start_date` to 300 days earlier, then calls `yf.download` for both tickers. The first use of `df` is `df.items()` in the constituent loop, and `df` is not assigned until a later `yf.download`, so a run stops with `NameError: name 'df' is not defined`.
+
+`filter_function` keeps `fundamental.Symbol` when `fundamental.HasFundamentalData` is true. Called with a DataFrame, iteration yields the column names, and the call raises `AttributeError: 'str' object has no attribute 'HasFundamentalData'`.
+
+After `set_index(['UniverseSymbol', 'Time', 'Symbol'])`, `reset_index(level='UniverseSymbol', drop=True)` leaves the index names `Time` and `Symbol` and drops `UniverseSymbol`. The following `pd.merge` asks for the column `UniverseSymbol` and raises `KeyError: 'UniverseSymbol'`.
+
+The industry lookup has 145 rows and 55 group codes. Industry code `10130020` is used twice: Chemicals / Specialty Chemicals, and Forest Products / Specialty Chemicals. The group codes are `10130` and `10140`, and the later merge uses both columns, so those two rows do not match each other. The lumber industry is stored as `Lumber & Wood Prodcution`.
+
+Both pie charts select `2024-03-26`. The sector title says `Weight Distribution by Sector for 2023-03-26`, and the super-sector title says `Weight Distribution by Super Sector for 2023-03-26`.
+
+The daily risk-free rate is `(1 + 0.05) ** (1/252) - 1`, which is `0.00019363050654397362`. Sharpe divides that day's excess return by the 30-day standard deviation of excess returns. That standard deviation uses the sample divisor. When the first return is NaN, the first 30 Sharpe values are NaN, and the first number is at index 30.
