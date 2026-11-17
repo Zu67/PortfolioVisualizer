@@ -14,7 +14,7 @@ Python scripts for positions built from a brokerage export and for prices from Y
 
 `scripts/PortfolioVisualizerInGit.py` prints two downloads of about 300 days of VTI and SPY. The next loop reads `df`, which this file has not assigned, so running it from the top stops there. The lines after that are not reached. They expect `df` to be a constituents table, build Morningstar-style super-sector, sector, and industry lookup tables, and plot sector and super-sector weights. Those pie charts select `2024-03-26` and the titles say `2023-03-26`. The last cells use `df_security`, `df_benchmark`, `selected_symbol`, and `selected_benchmark`, which are also not defined here. They compute a beta, a 30-day rolling Sharpe ratio, Treynor ratio, and Jensen's alpha with a 5% risk-free rate, and plot cumulative percent price change.
 
-`data/ETF Constituent Data - Examples.csv` is example ETF constituent data.
+`data/ETF Constituent Data - Examples.csv` has 59,175 rows. The composite tickers are VXUS (38,680), VTI (19,985), and QQQ (510). The file dates run from 2021-11-01 through 2021-11-05. 58,665 rows are as of 2021-09-30, and the other 510 are as of the same day as their file date.
 
 `quickstart` is a gitlink to [plaid/quickstart](https://github.com/plaid/quickstart) at `5d4707883204fde096bf618e4862807b759e3c73`.
 
