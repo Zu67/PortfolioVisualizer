@@ -1,6 +1,6 @@
 # PortfolioVisualizer
 
-This branch is `DevelopmentPortfolioVisualizer`. The commits on it run from 2024-04-30 ("Initial commit") through 2024-05-13 ("Updating PortfolioVisualizer").
+This branch is `DevelopmentPortfolioVisualizer`. The commits that added the scripts run from 2024-04-30 ("Initial commit") through 2024-05-13 ("Updating PortfolioVisualizer"). Later commits moved those files into `scripts/` and updated this README.
 
 | File | What it does |
 | --- | --- |
