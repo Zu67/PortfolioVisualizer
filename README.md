@@ -1,6 +1,6 @@
 # PortfolioVisualizer
 
-Python scripts for positions built from a brokerage export and for prices from Yahoo Finance. The exports themselves are not in this repository.
+Python scripts for positions built from a brokerage export and for prices from Yahoo Finance. The exports themselves are not in this repository. `.vscode/settings.json` sets only `files.autoSave` to `afterDelay`. `.gitattributes` is the one line `* text=auto`, under the comment "Auto detect text files and perform LF normalization".
 
 | Script | What it does |
 | --- | --- |
