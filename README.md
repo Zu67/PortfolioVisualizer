@@ -4,7 +4,7 @@ This branch is `DevelopmentPortfolioVisualizer`. The commits that added the scri
 
 | File | What it does |
 | --- | --- |
-| `scripts/Data Generator.py` | Uses Faker to write 100 synthetic buy and sell rows to a local `transactiondata.csv`. |
+| `scripts/Data Generator.py` | Uses Faker to write 100 rows to a local `transactiondata.csv`. Each row is a date, a four-letter symbol, buy or sell, a fake person's name in the broker column, a quantity from 1 to 100, and a price from 10.00 to 500.00. |
 | `scripts/PortfolioData` | Reads a local `PortfolioData.csv` and plots the running sum of daily percent changes. The chart title is "Portfolio Performance". |
 | `scripts/PortfolioVisualizerInGit.py` | Prints two downloads of about 300 days of VTI and SPY, then stops. See below. |
 
