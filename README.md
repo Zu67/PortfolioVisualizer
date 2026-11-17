@@ -4,7 +4,7 @@ Python scripts for positions built from a brokerage export and for prices from Y
 
 | Script | What it does |
 | --- | --- |
-| `scripts/Data Generator.py` | Uses Faker to write 100 synthetic buy and sell rows to a local `transactiondata.csv`. |
+| `scripts/Data Generator.py` | Uses Faker to write 100 rows to a local `transactiondata.csv`. Each row is a date, a four-letter symbol, buy or sell, a fake person's name in the broker column, a quantity from 1 to 100, and a price from 10.00 to 500.00. |
 | `scripts/portfolio_calculation_quinn.py` | Reads `robinhood_data.csv`. Holding cost is the amount times -1, quantity flips sign when that cost is negative, and average price is the running cost divided by the running quantity. It downloads adjusted closes for the activity-date range and prints the ITOT rows with market value and gain/loss. |
 | `scripts/robinhood_portfolio_manipulation.py` | Reads the same file, expands every calendar day between the first and last activity for every symbol, and forward-fills quantity and average price. After joining adjusted closes, total cost is quantity times average price. It prints the last 25 rows. |
 | `scripts/schwab_portfolio_manipulation.py` | Reads `Roth_IRA.csv`, keeps Buy and Sell rows, and does that same calendar expansion and forward-fill by symbol. It prints the tail and does not download prices. |
