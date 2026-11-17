@@ -5,9 +5,9 @@ Python scripts for positions built from a brokerage export and for prices from Y
 | Script | What it does |
 | --- | --- |
 | `scripts/Data Generator.py` | Uses Faker to write 100 synthetic buy and sell rows to a local `transactiondata.csv`. |
-| `scripts/portfolio_calculation_quinn.py` | Reads `robinhood_data.csv` from the working directory, then computes holding cost, quantity, and average price and downloads adjusted closes with yfinance. |
-| `scripts/robinhood_portfolio_manipulation.py` | Same kind of holding-cost rollup from `robinhood_data.csv` in the working directory. |
-| `scripts/schwab_portfolio_manipulation.py` | Same rollup for Buy and Sell rows in a local `Roth_IRA.csv`. |
+| `scripts/portfolio_calculation_quinn.py` | Reads `robinhood_data.csv`. Holding cost is the amount times -1, quantity flips sign when that cost is negative, and average price is the running cost divided by the running quantity. It downloads adjusted closes for the activity-date range and prints the ITOT rows with market value and gain/loss. |
+| `scripts/robinhood_portfolio_manipulation.py` | Reads the same file, expands every calendar day between the first and last activity for every symbol, and forward-fills quantity and average price. After joining adjusted closes, total cost is quantity times average price. It prints the last 25 rows. |
+| `scripts/schwab_portfolio_manipulation.py` | Reads `Roth_IRA.csv`, keeps Buy and Sell rows, and does that same calendar expansion and forward-fill by symbol. It prints the tail and does not download prices. |
 | `scripts/PortfolioVisualizerInGit.py` | Prints two downloads of about 300 days of VTI and SPY, then stops. See below. |
 | `scripts/PortfolioData` | Reads a local `PortfolioData.csv` and plots the running sum of daily percent changes. The chart title is "Portfolio Performance". |
 | `scripts/plaid_quickstart.py` | Notes for running the public Plaid quickstart. It does not contain API keys. |
